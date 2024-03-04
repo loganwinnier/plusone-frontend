@@ -4,7 +4,7 @@ import PlusOneApi from './api';
 /** This is setup for Socket Io */
 
 // "undefined" means the URL will be computed from the `window.location` object
-const BACKEND_URL =  import.meta.env.BACKEND_URL;
+const BACKEND_URL = "https://plusone-backend.onrender.com"
 
 // same origin version
 const token = PlusOneApi.token || localStorage.getItem("token")

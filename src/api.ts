@@ -10,7 +10,7 @@ import {
   UserParams
 } from "./types";
 import clean from "./helpers/clean";
-const BACKEND_URL =  import.meta.env.BACKEND_URL;
+const BACKEND_URL =  "https://plusone-backend.onrender.com"
 /** API Class.
  *
  * Static class tying together methods used to get/send to to the API.
