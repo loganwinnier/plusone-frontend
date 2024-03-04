@@ -10,7 +10,7 @@ import {
   UserParams
 } from "./types";
 import clean from "./helpers/clean";
-const BASE_URL =  "http://localhost:3001";
+const BACKEND_URL =  import.meta.env.BACKEND_URL;
 /** API Class.
  *
  * Static class tying together methods used to get/send to to the API.
@@ -24,7 +24,7 @@ class PlusOneApi {
   static token = "";
 
   static async request(endpoint: string, data = {}, method = "GET") {
-    const url = new URL(`${ BASE_URL }/${ endpoint }`);
+    const url = new URL(`${ BACKEND_URL }/${ endpoint }`);
     const headers = {
       authorization: `Bearer ${ this.token }`,
       'content-type': 'application/json',
@@ -129,7 +129,7 @@ class PlusOneApi {
           }
         }
   
-          const resp = await fetch(`${ BASE_URL }/profiles`, {
+          const resp = await fetch(`${ BACKEND_URL }/profiles`, {
           method: 'POST',
           body: formData,
           headers: {
@@ -162,7 +162,7 @@ class PlusOneApi {
         }
       }
 
-        const resp = await fetch(`${ BASE_URL }/profiles/${ email }`, {
+        const resp = await fetch(`${ BACKEND_URL }/profiles/${ email }`, {
         method: 'PATCH',
         body: formData,
         headers: {
@@ -191,7 +191,7 @@ class PlusOneApi {
           }
       }
 
-        const resp = await fetch(`${ BASE_URL }/events`, {
+        const resp = await fetch(`${ BACKEND_URL }/events`, {
         method: 'POST',
         body: formData,
         headers: {
